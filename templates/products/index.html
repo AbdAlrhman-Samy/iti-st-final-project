@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-		<script defer src="{% static 'js/app.js' %}"></script>
-		<title>Document</title>
-	</head>
-	<body>
-		{% for category in categories %}
-		<h1>
-			<a href="{% url 'category' category %}">{{category}}</a>
-		</h1>
-		{% endfor %}
-	</body>
-</html>
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="categories-grid">
+	<h1 style="text-align:center;">All Categories</h1>
+{% for category in categories %}
+
+	<a href="{% url 'category' category.id %}" class="category-card">
+		{{category}}
+	</a>
+	{% endfor %} 
+</div>
+
+{% endblock content %}
