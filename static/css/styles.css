@@ -16,6 +16,7 @@
 body{
     background-color: var(--light);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .navbar{
@@ -50,6 +51,26 @@ body{
 .nav-links a:hover{
     border-bottom: 5px solid var(--primary);
     transition: 150ms ease-in-out;
+}
+
+#cart{
+    background-color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+#cart span{
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    background-color: #FDC23E;
+    padding: 3px;
+    border-radius: 5px;
 }
 
 .categories-grid{
@@ -119,3 +140,101 @@ body{
     transform: scale(0.95);
     transition: 150ms ease-in-out;
 }
+
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    gap: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5rem auto;
+}
+
+.product-container div{
+    padding: 2rem 4rem;
+}
+
+.product-container img{
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#add-btn{
+    margin: 2rem auto;
+    border: 3px solid var(--primary);
+    background-color: var(--dark); 
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: larger;
+    font-weight: bold;   
+}
+
+#add-btn:hover{
+    transform: scale(1.1);
+    transition: 250ms ease-in-out;
+}
+
+#add-btn:active{
+    transform: scale(0.95);
+    transition: 150ms ease-in-out;
+}
+
+#cart-backdrop{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#cart-drawer{
+    width: 35vw;
+    min-height: 100vh;
+    background-color: #13212A;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#cart-drawer h1{
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+#cart-items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 1rem 2rem;
+}
+
+.item-card{
+    background-color: var(--secondary);
+    border: 3px solid var(--primary);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+/* .cart-drawer button{
+    background-color: transparent;
+    border: 5px double var(--primary);
+    color: var(--light);
+    padding: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+} */
+

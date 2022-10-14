@@ -2,9 +2,12 @@
 <nav class="navbar">
     <a href="{% url 'home' %}"><img src="{% static 'images/logo.svg' %}" width="144" alt="shoppy logo"></a>
 
-    <div class="nav-links">
-        <a href="#">About</a>
-    
+    <div class="nav-links">    
         <a href="#">Contact Us</a>
+
+        <button id="cart">
+            <img  src="{% static 'images/cart.svg' %}" width="28" >
+            <span id="cart-items-count"></span>
+        </button>
     </div>
 </nav>

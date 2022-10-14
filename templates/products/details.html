@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-		<h1>{{product.title}} 		<span>{{product.price}}USD</span></h1>
+
+<div class="product-container">
+
+	<div>
 		<img src="{{product.thumbnail}}" alt="" />
+	</div>
+
+	<div>
+		<h1>{{product.title}} </h1>
+		<h2>{{product.price}}$</h2>
+		<hr>
 		<p>{{product.description}}</p>
+		<br>
+		<button data-product-name="{{product.title}}" data-product-price="{{product.price}}" id="add-btn">Add To Cart</button>
+	</div>
+
+
+</div>
 {% endblock content %}
 

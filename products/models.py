@@ -1,4 +1,3 @@
-from turtle import title
 from django.db import models
 
 # Create your models here.
@@ -22,8 +21,7 @@ class Product(models.Model):
     description = models.CharField(max_length=255)
     price = models.IntegerField()
     thumbnail = models.CharField(max_length=255, blank=True)
-    category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 
     def __str__(self) -> str:
         return self.title
